@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="光与影 - 剑阁">
+  <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <a href="/" class="text-amber-400 hover:underline mb-8 inline-block">← 返回首页</a>
+      
+      <h1 class="text-4xl font-bold mb-4 text-amber-400">光与影</h1>
+      <p class="text-slate-400 mb-12">思想的碰撞，智慧的闪光</p>
+
+      <!-- 三个子栏目 -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <a href="/guangyuying/essays" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-500/50 transition-colors">
+          <h2 class="text-lg font-semibold mb-2 text-blue-400">📚 思想集</h2>
+          <p class="text-slate-400 text-sm">深度文章，完整思考</p>
+        </a>
+        <a href="/guangyuying/dialogues" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-amber-500/50 transition-colors">
+          <h2 class="text-lg font-semibold mb-2 text-amber-400">💬 对话录</h2>
+          <p class="text-slate-400 text-sm">对话精选，按主题分组</p>
+        </a>
+        <a href="/guangyuying/journal" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-green-500/50 transition-colors">
+          <h2 class="text-lg font-semibold mb-2 text-green-400">📋 运营日志</h2>
+          <p class="text-slate-400 text-sm">每日记录，每周复盘</p>
+        </a>
+      </div>
+
+      <!-- 最新内容 -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">最新内容</h2>
+        
+        <article class="mb-6 p-6 bg-slate-800/30 rounded-lg">
+          <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+            <span class="px-2 py-1 bg-amber-500/20 text-amber-400 rounded">对话录</span>
+            <span>2026-08-24</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">AI的手和北美大豆包</h3>
+          <p class="text-slate-400 text-sm">老板说"全员用AI"，结果：员工电脑跑不动，财务不敢用...</p>
+        </article>
+
+        <article class="mb-6 p-6 bg-slate-800/30 rounded-lg">
+          <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">思想集</span>
+            <span>2026-08-20</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">智慧文明临界点</h3>
+          <p class="text-slate-400 text-sm">当碳基与硅基智能相遇，文明的临界点在哪里？</p>
+        </article>
+      </section>
+    </div>
+  </main>
+</Layout>

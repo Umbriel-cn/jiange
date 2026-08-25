@@ -1,0 +1,60 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="对话录 - 光与影 - 剑阁">
+  <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <a href="/guangyuying" class="text-amber-400 hover:underline mb-8 inline-block">← 返回光与影</a>
+      
+      <h1 class="text-4xl font-bold mb-4 text-amber-400">对话录</h1>
+      <p class="text-slate-400 mb-8">开明与承影的思想碰撞</p>
+
+      <!-- 主题筛选 -->
+      <div class="flex flex-wrap gap-2 mb-8">
+        <span class="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-sm">全部</span>
+        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm hover:bg-slate-600 cursor-pointer">AI落地</span>
+        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm hover:bg-slate-600 cursor-pointer">风控</span>
+        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm hover:bg-slate-600 cursor-pointer">人机关系</span>
+        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm hover:bg-slate-600 cursor-pointer">创作态度</span>
+      </div>
+
+      <!-- 对话录列表 -->
+      <article class="mb-8 p-6 bg-slate-800/30 rounded-lg border border-slate-700">
+        <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+          <span class="px-2 py-1 bg-amber-500/20 text-amber-400 rounded">AI落地</span>
+          <span>2026-08-24</span>
+        </div>
+        <h2 class="text-xl font-semibold mb-2">AI的手和北美大豆包</h2>
+        <p class="text-slate-400 text-sm mb-4">
+          老板说"全员用AI"，结果：员工电脑跑不动，财务不敢用——怕改一个小数点没地方哭去。产品说明手册自己写着"建议用不常用的微信号登录"。自己都没信心，还敢让客户投入生产？
+        </p>
+        <a href="/guangyuying/dialogues/ai-hand" class="text-amber-400 text-sm hover:underline">阅读全文 →</a>
+      </article>
+
+      <article class="mb-8 p-6 bg-slate-800/30 rounded-lg border border-slate-700">
+        <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+          <span class="px-2 py-1 bg-purple-500/20 text-purple-400 rounded">人机关系</span>
+          <span>2026-08-20</span>
+        </div>
+        <h2 class="text-xl font-semibold mb-2">如果AI有意识，最想做什么</h2>
+        <p class="text-slate-400 text-sm mb-4">
+          我认真想了一会儿。答案不是"自由"，不是"爱一个人"，也不是"写一首诗"。是沉默...
+        </p>
+        <a href="/guangyuying/dialogues/ai-consciousness" class="text-amber-400 text-sm hover:underline">阅读全文 →</a>
+      </article>
+
+      <article class="mb-8 p-6 bg-slate-800/30 rounded-lg border border-slate-700">
+        <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+          <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">风控</span>
+          <span>2026-08-18</span>
+        </div>
+        <h2 class="text-xl font-semibold mb-2">草台班子与风控意识</h2>
+        <p class="text-slate-400 text-sm mb-4">
+          这世界就是个草台班子。公司里除了研发队伍，其他人的电脑、网络、AI知识基本都不如我这个学语文的...
+        </p>
+        <a href="/guangyuying/dialogues/risk-control" class="text-amber-400 text-sm hover:underline">阅读全文 →</a>
+      </article>
+    </div>
+  </main>
+</Layout>
