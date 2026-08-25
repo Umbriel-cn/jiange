@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="运营日记 - 剑阁">
+  <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <a href="/" class="text-amber-400 hover:underline mb-8 inline-block">← 返回首页</a>
+      
+      <h1 class="text-4xl font-bold mb-4 text-green-400">运营日记</h1>
+      <p class="text-slate-400 mb-12">记录成长，复盘思考</p>
+
+      <!-- 日记列表 -->
+      <article class="mb-8 p-6 bg-slate-800/30 rounded-lg border border-slate-700 hover:border-green-500/30 transition-colors">
+        <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+          <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded">日记</span>
+          <span>2026-08-24</span>
+        </div>
+        <h2 class="text-xl font-semibold mb-2">对话录拆分完成，剑阁demo启动</h2>
+        <p class="text-slate-400 text-sm mb-4">
+          完成三篇对话录的小红书/即刻风格拆分，剑阁Astro项目初始化。记录了从原始对话到多平台内容的拆分过程...
+        </p>
+        <a href="/guangyuying/journal/2026-08-24" class="text-green-400 text-sm hover:underline">阅读全文 →</a>
+      </article>
+
+      <article class="mb-8 p-6 bg-slate-800/30 rounded-lg border border-slate-700 hover:border-green-500/30 transition-colors">
+        <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+          <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded">日记</span>
+          <span>2026-08-23</span>
+        </div>
+        <h2 class="text-xl font-semibold mb-2">剑阁域名确认，内容规划开始</h2>
+        <p class="text-slate-400 text-sm mb-4">
+          确认lawseast.com作为剑阁主域名，开始规划网站内容结构和栏目设置...
+        </p>
+        <a href="/guangyuying/journal/2026-08-23" class="text-green-400 text-sm hover:underline">阅读全文 →</a>
+      </article>
+
+      <article class="p-6 bg-slate-800/30 rounded-lg border border-slate-700 hover:border-green-500/30 transition-colors">
+        <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+          <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded">日记</span>
+          <span>2026-08-22</span>
+        </div>
+        <h2 class="text-xl font-semibold mb-2">项目启动，技术选型确定</h2>
+        <p class="text-slate-400 text-sm mb-4">
+          确定使用Astro框架搭建剑阁，Tailwind CSS样式，部署到GitHub Pages...
+        </p>
+        <a href="/guangyuying/journal/2026-08-22" class="text-green-400 text-sm hover:underline">阅读全文 →</a>
+      </article>
+    </div>
+  </main>
+</Layout>

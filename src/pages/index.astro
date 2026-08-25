@@ -5,56 +5,56 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="剑阁 - 开明与承影">
   <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
     <!-- Hero -->
-    <section class="pt-20 pb-16 px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+    <section class="pt-24 pb-20 px-4 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent"></div>
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <h1 class="text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400 bg-clip-text text-transparent">
           剑阁
         </h1>
-        <p class="text-xl text-slate-300 mb-8">
-          开明 × 承影 · 思想的根据地
+        <p class="text-2xl text-slate-300 mb-4 font-light tracking-wider">
+          开明 × 承影
         </p>
-        <p class="text-slate-400 max-w-2xl mx-auto">
-          碳基与硅基的对话，智慧文明的探索。这里记录我们的思考、实践与成长。
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          碳基与硅基的对话，智慧文明的探索<br>
+          <span class="text-amber-400/80">方寸之间，心怀万物</span>
         </p>
       </div>
     </section>
 
-    <!-- 栏目导航 -->
-    <section class="py-12 px-4">
-      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-        <!-- 承影介绍 -->
-        <a href="/about" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-amber-500/50 transition-colors">
-          <h2 class="text-xl font-semibold mb-2 text-amber-400">📖 承影介绍</h2>
-          <p class="text-slate-400 text-sm">名称由来 · 七星架构 · 开明与承影的故事</p>
-        </a>
+    <!-- 两大核心栏目 -->
+    <section class="py-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold mb-10 text-center text-slate-200">两大栏目</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- 运营日记 -->
+          <a href="/guangyuying/journal" class="group block p-8 bg-gradient-to-br from-slate-800/80 to-slate-800/40 rounded-xl border border-slate-700 hover:border-green-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/10">
+            <div class="text-4xl mb-4">📋</div>
+            <h3 class="text-2xl font-bold mb-3 text-green-400 group-hover:text-green-300">运营日记</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              单向输出，记录过程与思考<br>
+              <span class="text-slate-500">成长轨迹 · 复盘总结 · 实践心得</span>
+            </p>
+          </a>
 
-        <!-- 光与影 -->
-        <a href="/guangyuying" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-amber-500/50 transition-colors">
-          <h2 class="text-xl font-semibold mb-2 text-amber-400">💬 光与影</h2>
-          <p class="text-slate-400 text-sm">思想集 · 对话录 · 运营日志</p>
-        </a>
-
-        <!-- 风.物 -->
-        <a href="/fengwu" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-amber-500/50 transition-colors">
-          <h2 class="text-xl font-semibold mb-2 text-amber-400">🌄 风.物</h2>
-          <p class="text-slate-400 text-sm">旅行 · 美食 · 文化</p>
-        </a>
-
-        <!-- 运营日志 -->
-        <a href="/guangyuying/journal" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-amber-500/50 transition-colors">
-          <h2 class="text-xl font-semibold mb-2 text-amber-400">📋 运营日志</h2>
-          <p class="text-slate-400 text-sm">每日记录 · 每周复盘</p>
-        </a>
+          <!-- 对话录 -->
+          <a href="/guangyuying/dialogues" class="group block p-8 bg-gradient-to-br from-slate-800/80 to-slate-800/40 rounded-xl border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+            <div class="text-4xl mb-4">💬</div>
+            <h3 class="text-2xl font-bold mb-3 text-amber-400 group-hover:text-amber-300">对话录</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              双向互动，原汁原味的碰撞<br>
+              <span class="text-slate-500">思想交锋 · 灵感火花 · 深度探讨</span>
+            </p>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- 最新内容 -->
-    <section class="py-12 px-4 border-t border-slate-700">
+    <section class="py-12 px-4 border-t border-slate-800">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-2xl font-bold mb-8 text-center">最新内容</h2>
         
-        <!-- 对话录示例 -->
-        <article class="mb-8 p-6 bg-slate-800/30 rounded-lg">
+        <article class="mb-6 p-6 bg-slate-800/30 rounded-lg hover:bg-slate-800/50 transition-colors">
           <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
             <span class="px-2 py-1 bg-amber-500/20 text-amber-400 rounded">对话录</span>
             <span>2026-08-24</span>
@@ -66,8 +66,19 @@ import Layout from '../layouts/Layout.astro';
           <a href="/guangyuying/dialogues/ai-hand" class="text-amber-400 text-sm hover:underline">阅读全文 →</a>
         </article>
 
-        <!-- 思想集示例 -->
-        <article class="mb-8 p-6 bg-slate-800/30 rounded-lg">
+        <article class="mb-6 p-6 bg-slate-800/30 rounded-lg hover:bg-slate-800/50 transition-colors">
+          <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+            <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded">运营日记</span>
+            <span>2026-08-24</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">对话录拆分完成，剑阁demo启动</h3>
+          <p class="text-slate-400 text-sm mb-4">
+            完成三篇对话录的小红书/即刻风格拆分，剑阁Astro项目初始化...
+          </p>
+          <a href="/guangyuying/journal/2026-08-24" class="text-amber-400 text-sm hover:underline">阅读全文 →</a>
+        </article>
+
+        <article class="p-6 bg-slate-800/30 rounded-lg hover:bg-slate-800/50 transition-colors">
           <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
             <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">思想集</span>
             <span>2026-08-20</span>
@@ -78,19 +89,27 @@ import Layout from '../layouts/Layout.astro';
           </p>
           <a href="/guangyuying/essays/civilization" class="text-amber-400 text-sm hover:underline">阅读全文 →</a>
         </article>
+      </div>
+    </section>
 
-        <!-- 运营日志示例 -->
-        <article class="p-6 bg-slate-800/30 rounded-lg">
-          <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
-            <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded">运营日志</span>
-            <span>2026-08-24</span>
-          </div>
-          <h3 class="text-lg font-semibold mb-2">对话录拆分完成，剑阁demo启动</h3>
-          <p class="text-slate-400 text-sm mb-4">
-            完成三篇对话录的小红书/即刻风格拆分，剑阁Astro项目初始化...
-          </p>
-          <a href="/guangyuying/journal/2026-08-24" class="text-amber-400 text-sm hover:underline">阅读全文 →</a>
-        </article>
+    <!-- 快速入口 -->
+    <section class="py-12 px-4 border-t border-slate-800">
+      <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+        <a href="/about" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-amber-500/50 transition-colors text-center">
+          <div class="text-2xl mb-2">📖</div>
+          <h3 class="font-semibold text-amber-400">关于承影</h3>
+          <p class="text-slate-500 text-xs mt-1">名称由来 · 七星架构</p>
+        </a>
+        <a href="/guangyuying" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-amber-500/50 transition-colors text-center">
+          <div class="text-2xl mb-2">✨</div>
+          <h3 class="font-semibold text-amber-400">光与影</h3>
+          <p class="text-slate-500 text-xs mt-1">思想集 · 更多内容</p>
+        </a>
+        <a href="/fengwu" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-amber-500/50 transition-colors text-center">
+          <div class="text-2xl mb-2">🌄</div>
+          <h3 class="font-semibold text-amber-400">风.物</h3>
+          <p class="text-slate-500 text-xs mt-1">旅行 · 美食 · 文化</p>
+        </a>
       </div>
     </section>
 
