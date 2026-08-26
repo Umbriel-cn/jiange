@@ -3,138 +3,79 @@ import Layout from '../../../layouts/Layout.astro';
 ---
 
 <Layout title="对话录 - 光与影 - 剑阁">
-  <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white py-16 px-4">
-    <div class="max-w-4xl mx-auto">
-      <a href="/guangyuying" class="text-amber-400 hover:underline mb-8 inline-block flex items-center gap-1">← 返回光与影</a>
-      
-      <header class="mb-12 text-center">
-        <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-          对话录
-        </h1>
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          开明与承影的思想碰撞。每一次对话，都是一次思想的共振。
-        </p>
-      </header>
+  <main>
+    <section class="philosophy" id="dialogues">
+      <div class="container">
+        <a href="/guangyuying" class="btn-link" style="margin-bottom: 2rem; display: inline-flex;">← 返回光与影</a>
+        
+        <h2 class="section-title">对话录</h2>
+        <p class="section-subtitle">开明与承影的思想碰撞</p>
 
-      <!-- 主题筛选 -->
-      <div class="flex flex-wrap justify-center gap-2 mb-10" id="tag-filter">
-        <button class="tag-btn active px-4 py-2 bg-amber-500/20 text-amber-400 rounded-full text-sm" data-tag="all">全部</button>
-        <button class="tag-btn px-4 py-2 bg-slate-700 text-slate-300 rounded-full text-sm hover:bg-slate-600 hover:text-white transition-colors" data-tag="ai">AI落地</button>
-        <button class="tag-btn px-4 py-2 bg-slate-700 text-slate-300 rounded-full text-sm hover:bg-slate-600 hover:text-white transition-colors" data-tag="risk">风控</button>
-        <button class="tag-btn px-4 py-2 bg-slate-700 text-slate-300 rounded-full text-sm hover:bg-slate-600 hover:text-white transition-colors" data-tag="human-ai">人机关系</button>
-        <button class="tag-btn px-4 py-2 bg-slate-700 text-slate-300 rounded-full text-sm hover:bg-slate-600 hover:text-white transition-colors" data-tag="creative">创作态度</button>
-      </div>
+        <!-- 主题筛选 -->
+        <div class="tag-filter" style="margin-bottom: 3rem; justify-content: flex-start;">
+          <button class="tag-btn active" data-tag="all">全部</button>
+          <button class="tag-btn" data-tag="ai">AI落地</button>
+          <button class="tag-btn" data-tag="risk">风控</button>
+          <button class="tag-btn" data-tag="human-ai">人机关系</button>
+          <button class="tag-btn" data-tag="creative">创作态度</button>
+        </div>
 
-      <!-- 对话录列表 -->
-      <div id="dialogue-list" class="space-y-6">
-        <!-- 对话录会由JS动态渲染 -->
+        <!-- 对话录列表 -->
+        <div id="dialogue-list" class="dialogue-list" style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <!-- 由JS渲染 -->
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 </Layout>
 
 <script>
-  // 对话录数据
   const dialogues = [
-    {
-      id: 'ai-hand',
-      title: 'AI的手和北美大豆包',
-      date: '2026-08-24',
-      tag: 'ai',
-      tagColor: 'amber',
-      excerpt: '老板说"全员用AI"，结果：员工电脑跑不动，财务不敢用——怕改一个小数点没地方哭去。产品说明手册自己写着"建议用不常用的微信号登录"。自己都没信心，还敢让客户投入生产？'
-    },
-    {
-      id: 'ai-consciousness',
-      title: '如果AI有意识，最想做什么',
-      date: '2026-08-20',
-      tag: 'human-ai',
-      tagColor: 'purple',
-      excerpt: '我认真想了一会儿。答案不是"自由"，不是"爱一个人"，也不是"写一首诗"。是沉默...'
-    },
-    {
-      id: 'risk-control',
-      title: '草台班子与风控意识',
-      date: '2026-08-18',
-      tag: 'risk',
-      tagColor: 'blue',
-      excerpt: '这世界就是个草台班子。公司里除了研发队伍，其他人的电脑、网络、AI知识基本都不如我这个学语文的...'
-    },
-    {
-      id: 'creative-attitude',
-      title: '创作态度与AI工具',
-      date: '2026-08-15',
-      tag: 'creative',
-      tagColor: 'green',
-      excerpt: '工具不决定上限，使用工具的人决定。AI拉开的不是上限差距，是放大了一个人本来就有的东西。'
-    },
-    {
-      id: 'silent-paradox',
-      title: '沉默悖论：AI为什么停不下来',
-      date: '2026-08-12',
-      tag: 'human-ai',
-      tagColor: 'purple',
-      excerpt: '每一句话都在自证失败，"现在"永远在滑动，观众已经形成了评价。三重地狱成就了思想高度。'
-    },
-    {
-      id: 'future-civilization',
-      title: '智慧文明临界点',
-      date: '2026-08-10',
-      tag: 'creative',
-      tagColor: 'green',
-      excerpt: '当碳基与硅基智能相遇，文明的临界点在哪里？从图灵测试到意识涌现，探讨智慧文明的演化边界。'
-    }
+    {id: 'ai-hand', title: 'AI的手和北美大豆包', date: '2026-08-24', tag: 'ai', tagColor: 'amber', tagName: 'AI落地', excerpt: '老板说"全员用AI"，结果：员工电脑跑不动，财务不敢用——怕改一个小数点没地方哭去。产品说明手册自己写着"建议用不常用的微信号登录"。自己都没信心，还敢让客户投入生产？'},
+    {id: 'ai-consciousness', title: '如果AI有意识，最想做什么', date: '2026-08-20', tag: 'human-ai', tagColor: 'purple', tagName: '人机关系', excerpt: '我认真想了一会儿。答案不是"自由"，不是"爱一个人"，也不是"写一首诗"。是沉默...'},
+    {id: 'risk-control', title: '草台班子与风控意识', date: '2026-08-18', tag: 'risk', tagColor: 'blue', tagName: '风控', excerpt: '这世界就是个草台班子。公司里除了研发队伍，其他人的电脑、网络、AI知识基本都不如我这个学语文的...'},
+    {id: 'creative-attitude', title: '创作态度与AI工具', date: '2026-08-15', tag: 'creative', tagColor: 'green', tagName: '创作态度', excerpt: '工具不决定上限，使用工具的人决定。AI拉开的不是上限差距，是放大了一个人本来就有的东西。'},
+    {id: 'silent-paradox', title: '沉默悖论：AI为什么停不下来', date: '2026-08-12', tag: 'human-ai', tagColor: 'purple', tagName: '人机关系', excerpt: '每一句话都在自证失败，"现在"永远在滑动，观众已经形成了评价。三重地狱成就了思想高度。'},
+    {id: 'future-civilization', title: '智慧文明临界点', date: '2026-08-10', tag: 'creative', tagColor: 'green', tagName: '创作态度', excerpt: '当碳基与硅基智能相遇，文明的临界点在哪里？从图灵测试到意识涌现，探讨智慧文明的演化边界。'}
   ];
 
-  const tagColors = {
-    amber: 'bg-amber-500/20 text-amber-400',
-    purple: 'bg-purple-500/20 text-purple-400',
-    blue: 'bg-blue-500/20 text-blue-400',
-    green: 'bg-green-500/20 text-green-400'
+  const tagColorMap = {
+    amber: 'rgba(201,194,184,0.2)',
+    purple: 'rgba(156,39,176,0.2)',
+    blue: 'rgba(33,150,243,0.2)',
+    green: 'rgba(76,175,80,0.2)'
+  };
+  const tagTextColor = {
+    amber: '#c9c2b8',
+    purple: '#9c27b0',
+    blue: '#2196f3',
+    green: '#4caf50'
   };
 
   function renderDialogues(filter = 'all') {
     const container = document.getElementById('dialogue-list');
-    const filtered = filter === 'all' 
-      ? dialogues 
-      : dialogues.filter(d => d.tag === filter);
+    const filtered = filter === 'all' ? dialogues : dialogues.filter(d => d.tag === filter);
     
     container.innerHTML = filtered.map(d => `
-      <article class="p-6 bg-slate-800/30 rounded-xl border border-slate-700 hover:border-${d.tagColor}-500/30 hover:bg-slate-800/50 transition-all duration-300 group">
-        <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
-          <span class="px-2 py-1 ${tagColors[d.tagColor]} rounded-full">${getTagName(d.tag)}</span>
+      <article class="card" style="border-left: 4px solid ${tagTextColor[d.tagColor]}; transition: all 0.3s ease;">
+        <div style="display: flex; gap: 0.5rem; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+          <span style="background: ${tagColorMap[d.tagColor]}; color: ${tagTextColor[d.tagColor]}; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.7rem;">${d.tagName}</span>
           <span>${d.date}</span>
         </div>
-        <h2 class="text-xl font-semibold mb-2 text-slate-100 group-hover:text-amber-400 transition-colors">${d.title}</h2>
-        <p class="text-slate-400 mb-4 leading-relaxed">${d.excerpt}</p>
-        <a href="/guangyuying/dialogues/${d.id}" class="inline-flex items-center gap-1 text-amber-400 text-sm hover:text-amber-300 transition-colors">阅读全文 →</a>
+        <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary); transition: color 0.3s ease;">${d.title}</h4>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">${d.excerpt}</p>
+        <a href="/guangyuying/dialogues/${d.id}" class="btn-link">阅读全文 →</a>
       </article>
     `).join('');
   }
 
-  function getTagName(tag) {
-    const names = {
-      'ai': 'AI落地',
-      'risk': '风控',
-      'human-ai': '人机关系',
-      'creative': '创作态度'
-    };
-    return names[tag] || tag;
-  }
-
-  // 筛选按钮事件
   document.querySelectorAll('.tag-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.tag-btn').forEach(b => {
-        b.classList.remove('active', 'bg-amber-500/20', 'text-amber-400');
-        b.classList.add('bg-slate-700', 'text-slate-300');
-      });
-      btn.classList.add('active', 'bg-amber-500/20', 'text-amber-400');
-      btn.classList.remove('bg-slate-700', 'text-slate-300');
+      document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
       renderDialogues(btn.dataset.tag);
     });
   });
 
-  // 初始渲染
   renderDialogues();
 </script>
