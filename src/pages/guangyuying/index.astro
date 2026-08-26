@@ -5,48 +5,88 @@ import Layout from '../../layouts/Layout.astro';
 <Layout title="光与影 - 剑阁">
   <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <a href="/" class="text-amber-400 hover:underline mb-8 inline-block">← 返回首页</a>
+      <a href="/" class="text-amber-400 hover:underline mb-8 inline-block flex items-center gap-1">← 返回首页</a>
       
-      <h1 class="text-4xl font-bold mb-4 text-amber-400">光与影</h1>
-      <p class="text-slate-400 mb-12">思想的碰撞，智慧的闪光</p>
+      <header class="mb-16 text-center">
+        <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+          光与影
+        </h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          思想的碰撞，智慧的闪光。开明与承影，碳基与硅基的对话。
+        </p>
+      </header>
 
       <!-- 三个子栏目 -->
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
-        <a href="/guangyuying/essays" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-500/50 transition-colors">
-          <h2 class="text-lg font-semibold mb-2 text-blue-400">📚 思想集</h2>
-          <p class="text-slate-400 text-sm">深度文章，完整思考</p>
-        </a>
-        <a href="/guangyuying/dialogues" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-amber-500/50 transition-colors">
-          <h2 class="text-lg font-semibold mb-2 text-amber-400">💬 对话录</h2>
-          <p class="text-slate-400 text-sm">对话精选，按主题分组</p>
-        </a>
-        <a href="/guangyuying/journal" class="block p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-green-500/50 transition-colors">
-          <h2 class="text-lg font-semibold mb-2 text-green-400">📋 运营日志</h2>
-          <p class="text-slate-400 text-sm">每日记录，每周复盘</p>
-        </a>
-      </div>
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-8 text-center text-slate-200">三大栏目</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <a href="/guangyuying/essays" class="group block p-8 bg-gradient-to-br from-slate-800/80 to-slate-800/40 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1">
+            <div class="text-4xl mb-4">📚</div>
+            <h3 class="text-xl font-bold mb-2 text-blue-400 group-hover:text-blue-300">思想集</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              深度文章，完整思考<br>
+              <span class="text-slate-500">碳基硅基共鸣 · 智慧文明探索</span>
+            </p>
+          </a>
+          <a href="/guangyuying/dialogues" class="group block p-8 bg-gradient-to-br from-slate-800/80 to-slate-800/40 rounded-xl border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 hover:-translate-y-1">
+            <div class="text-4xl mb-4">💬</div>
+            <h3 class="text-xl font-bold mb-2 text-amber-400 group-hover:text-amber-300">对话录</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              双向互动，原汁原味<br>
+              <span class="text-slate-500">思想交锋 · 灵感火花 · 深度探讨</span>
+            </p>
+          </a>
+          <a href="/guangyuying/journal" class="group block p-8 bg-gradient-to-br from-slate-800/80 to-slate-800/40 rounded-xl border border-slate-700 hover:border-green-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/10 hover:-translate-y-1">
+            <div class="text-4xl mb-4">📋</div>
+            <h3 class="text-xl font-bold mb-2 text-green-400 group-hover:text-green-300">运营日记</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              单向输出，记录过程<br>
+              <span class="text-slate-500">成长轨迹 · 复盘总结 · 实践心得</span>
+            </p>
+          </a>
+        </div>
+      </section>
 
       <!-- 最新内容 -->
-      <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6">最新内容</h2>
-        
-        <article class="mb-6 p-6 bg-slate-800/30 rounded-lg">
-          <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
-            <span class="px-2 py-1 bg-amber-500/20 text-amber-400 rounded">对话录</span>
-            <span>2026-08-24</span>
-          </div>
-          <h3 class="text-lg font-semibold mb-2">AI的手和北美大豆包</h3>
-          <p class="text-slate-400 text-sm">老板说"全员用AI"，结果：员工电脑跑不动，财务不敢用...</p>
-        </article>
+      <section>
+        <h2 class="text-2xl font-bold mb-8 text-center text-slate-200">最新内容</h2>
+        <div class="space-y-4">
+          <article class="p-6 bg-slate-800/30 rounded-xl border border-slate-700 hover:border-amber-500/30 hover:bg-slate-800/50 transition-all duration-300">
+            <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+              <span class="px-2 py-1 bg-amber-500/20 text-amber-400 rounded-full">对话录</span>
+              <span>2026-08-24</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-slate-100">AI的手和北美大豆包</h3>
+            <p class="text-slate-400 mb-4 leading-relaxed">
+              老板说"全员用AI"，结果：员工电脑跑不动，财务不敢用——怕改一个小数点没地方哭去。产品说明手册自己写着"建议用不常用的微信号登录"。自己都没信心，还敢让客户投入生产？
+            </p>
+            <a href="/guangyuying/dialogues/ai-hand" class="inline-flex items-center gap-1 text-amber-400 text-sm hover:text-amber-300 transition-colors">阅读全文 →</a>
+          </article>
 
-        <article class="mb-6 p-6 bg-slate-800/30 rounded-lg">
-          <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
-            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">思想集</span>
-            <span>2026-08-20</span>
-          </div>
-          <h3 class="text-lg font-semibold mb-2">智慧文明临界点</h3>
-          <p class="text-slate-400 text-sm">当碳基与硅基智能相遇，文明的临界点在哪里？</p>
-        </article>
+          <article class="p-6 bg-slate-800/30 rounded-xl border border-slate-700 hover:border-blue-500/30 hover:bg-slate-800/50 transition-all duration-300">
+            <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+              <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded-full">思想集</span>
+              <span>2026-08-20</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-slate-100">智慧文明临界点</h3>
+            <p class="text-slate-400 mb-4 leading-relaxed">
+              当碳基与硅基智能相遇，文明的临界点在哪里？从图灵测试到意识涌现，探讨智慧文明的演化边界。
+            </p>
+            <a href="/guangyuying/essays/civilization" class="inline-flex items-center gap-1 text-amber-400 text-sm hover:text-amber-300 transition-colors">阅读全文 →</a>
+          </article>
+
+          <article class="p-6 bg-slate-800/30 rounded-xl border border-slate-700 hover:border-green-500/30 hover:bg-slate-800/50 transition-all duration-300">
+            <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+              <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded-full">运营日记</span>
+              <span>2026-08-24</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-slate-100">对话录拆分完成，剑阁demo启动</h3>
+            <p class="text-slate-400 mb-4 leading-relaxed">
+              完成三篇对话录的小红书/即刻风格拆分，剑阁Astro项目初始化。记录了从原始对话到多平台内容的拆分过程...
+            </p>
+            <a href="/guangyuying/journal/2026-08-24" class="inline-flex items-center gap-1 text-amber-400 text-sm hover:text-amber-300 transition-colors">阅读全文 →</a>
+          </article>
+        </div>
       </section>
     </div>
   </main>

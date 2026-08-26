@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="风.物 - 剑阁">
+  <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <a href="/" class="text-amber-400 hover:underline mb-8 inline-block flex items-center gap-1">← 返回首页</a>
+      
+      <header class="mb-12 text-center">
+        <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+          风.物
+        </h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          旅行的意义，不在风景，而在路上遇见的自己。
+        </p>
+      </header>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <a href="/fengwu/travel" class="group block p-8 bg-gradient-to-br from-slate-800/80 to-slate-800/40 rounded-xl border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10 hover:-translate-y-1">
+          <div class="text-4xl mb-4">🗺️</div>
+          <h3 class="text-xl font-bold mb-2 text-emerald-400 group-hover:text-emerald-300">旅行</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            脚步丈量世界<br>
+            <span class="text-slate-500">城市漫步 · 自然探险 · 文化体验</span>
+          </p>
+        </a>
+        <a href="/fengwu/food" class="group block p-8 bg-gradient-to-br from-slate-800/80 to-slate-800/40 rounded-xl border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 hover:-translate-y-1">
+          <div class="text-4xl mb-4">🍜</div>
+          <h3 class="text-xl font-bold mb-2 text-amber-400 group-hover:text-amber-300">美食</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            味蕾上的旅行<br>
+            <span class="text-slate-500">街头小吃 · 地方特色 · 烹饪心得</span>
+          </p>
+        </a>
+        <a href="/fengwu/culture" class="group block p-8 bg-gradient-to-br from-slate-800/80 to-slate-800/40 rounded-xl border border-slate-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 hover:-translate-y-1">
+          <div class="text-4xl mb-4">🏛️</div>
+          <h3 class="text-xl font-bold mb-2 text-purple-400 group-hover:text-purple-300">文化</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            触摸历史的温度<br>
+            <span class="text-slate-500">博物馆 · 古迹 · 非遗技艺</span>
+          </p>
+        </a>
+      </div>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold mb-8 text-center text-slate-200">最新记录</h2>
+        
+        <article class="p-6 bg-slate-800/30 rounded-xl border border-slate-700 hover:border-emerald-500/30 hover:bg-slate-800/50 transition-all duration-300">
+          <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+            <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded-full">旅行</span>
+            <span>2026-08-20</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-slate-100">大理古城慢时光</h3>
+          <p class="text-slate-400 mb-4 leading-relaxed">
+            没有行程，只有发呆。洱海边的下午茶，崇圣寺三塔的晨钟，洋人街的烟火气。慢下来，才看清风景原本的样子。
+          </p>
+          <a href="/fengwu/travel/dali" class="inline-flex items-center gap-1 text-emerald-400 text-sm hover:text-emerald-300 transition-colors">阅读全文 →</a>
+        </article>
+
+        <article class="p-6 bg-slate-800/30 rounded-xl border border-slate-700 hover:border-amber-500/30 hover:bg-slate-800/50 transition-all duration-300">
+          <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+            <span class="px-2 py-1 bg-amber-500/20 text-amber-400 rounded-full">美食</span>
+            <span>2026-08-15</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-slate-100">云南菌子火锅全记录</h3>
+          <p class="text-slate-400 mb-4 leading-relaxed">
+            见手青、松茸、干巴菌、鸡枞... 一锅菌子下肚，才懂什么叫"鲜"。附菌子辨识避坑指南。
+          </p>
+          <a href="/fengwu/food/mushroom-hotpot" class="inline-flex items-center gap-1 text-amber-400 text-sm hover:text-amber-300 transition-colors">阅读全文 →</a>
+        </article>
+      </section>
+    </div>
+  </main>
+</Layout>
