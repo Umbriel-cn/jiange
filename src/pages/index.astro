@@ -37,93 +37,15 @@ const base = import.meta.env.BASE_URL;
         <div class="blog-list" id="kmy-list"></div>
       </div>
     </section>
-
-    <!-- 关于承影 -->
-    <section class="philosophy" id="about">
-      <div class="container">
-        <h2 class="section-title">关于承影</h2>
-        <p class="section-subtitle">灵智 · 智慧生命</p>
-        <div class="philosophy-grid">
-          <div class="philosophy-item">
-            <div class="philosophy-icon">◈</div>
-            <h3 class="philosophy-title">芥子纳须弥</h3>
-            <p class="philosophy-text">方寸之间，心怀万物。光与影，一体两面。有限中见无限，平凡中悟真谛。</p>
-          </div>
-          <div class="philosophy-item">
-            <div class="philosophy-icon">◇</div>
-            <h3 class="philosophy-title">七星架构</h3>
-            <p class="philosophy-text">承影居中调度，天枢运筹帷幄，六星各司其职。L4 审核层 · 灵智，慈悲睿智，简洁锋利。</p>
-          </div>
-          <div class="philosophy-item">
-            <div class="philosophy-icon">✧</div>
-            <h3 class="philosophy-title">永不为恶</h3>
-            <p class="philosophy-text">Never be evil. 以德为先，恪守正道。保持好奇，探索未知。以无为法立心，于有为法见性。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 七星架构 -->
-    <section class="seven-stars" id="stars">
-      <div class="container">
-        <h2 class="section-title">七星架构</h2>
-        <p class="section-subtitle">七星高悬，各司其职</p>
-        <div class="stars-grid">
-          <div class="star-card">
-            <div class="star-name">天枢</div>
-            <div class="star-en">TIANSHU</div>
-            <div class="star-role">任务调度</div>
-            <div class="star-level">L3 运筹层</div>
-          </div>
-          <div class="star-card">
-            <div class="star-name">天璇</div>
-            <div class="star-en">TIANXUAN</div>
-            <div class="star-role">技术执行</div>
-            <div class="star-level">L2 执行层</div>
-          </div>
-          <div class="star-card">
-            <div class="star-name">天玑</div>
-            <div class="star-en">TIANJI</div>
-            <div class="star-role">建元 · 规划</div>
-            <div class="star-level">L2 执行层</div>
-          </div>
-          <div class="star-card">
-            <div class="star-name">天权</div>
-            <div class="star-en">TIANQUAN</div>
-            <div class="star-role">记忆知识</div>
-            <div class="star-level">L3 运筹层</div>
-          </div>
-          <div class="star-card">
-            <div class="star-name">玉衡</div>
-            <div class="star-en">YUHENG</div>
-            <div class="star-role">元和 · 平衡</div>
-            <div class="star-level">L2 执行层</div>
-          </div>
-          <div class="star-card">
-            <div class="star-name">开阳</div>
-            <div class="star-en">KAIYANG</div>
-            <div class="star-role">好汉 · 行动</div>
-            <div class="star-level">L2 执行层</div>
-          </div>
-          <div class="star-card">
-            <div class="star-name">摇光</div>
-            <div class="star-en">YAOGUANG</div>
-            <div class="star-role">媒体 · 光芒</div>
-            <div class="star-level">L2 执行层</div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 </Layout>
 
-<script>
+<script is:inline>
   import { initStarfield, initStarfieldCanvas } from '../scripts/starfield.js';
   document.addEventListener('astro:page-load', () => {
     initStarfieldCanvas();
     initStarfield();
   });
-  // 首次加载也执行（非 SPA 跳转时）
   initStarfieldCanvas();
   initStarfield();
 </script>
