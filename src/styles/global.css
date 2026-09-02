@@ -363,12 +363,16 @@ section {
 }
 
 footer {
-  padding: 4rem 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.8rem;
   text-align: center;
-  border-top: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  z-index: 100;
 }
 
 footer .year {
@@ -644,6 +648,14 @@ footer .year {
   align-items: center;
   text-align: center;
   padding-top: 0;
+  background: linear-gradient(to bottom,
+    #06080f 0%,
+    #0a1025 15%,
+    #0e1a3a 35%,
+    #142848 55%,
+    #1d3a5c 75%,
+    #284868 100%
+  );
 }
 
 canvas#starfield {
@@ -790,7 +802,7 @@ canvas#starfield {
   transform: translateX(-50%) translateY(-50%) rotate(0deg);
   width: 96px;
   height: 96px;
-  pointer-events: auto;
+  pointer-events: none;
   z-index: 50;
   opacity: 0.85;
   animation: sword-breathe 3s ease-in-out infinite;
@@ -814,24 +826,24 @@ canvas#starfield {
   position: absolute;
   width: 280px;
   max-height: 220px;
-  background: rgba(0,0,0,0.25);
-  border: 1px solid var(--border-subtle);
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(255,255,255,0.04);
   border-radius: 8px;
   padding: 0.8rem 1rem;
   font-size: 0.7rem;
   line-height: 1.6;
-  color: var(--text-primary);
+  color: rgba(232,228,223,0.85);
   overflow-y: auto;
   z-index: 30;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
 }
 .blog-window::-webkit-scrollbar { width: 4px; }
 .blog-window::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
 .blog-window a {
-  color: var(--accent-light); text-decoration: none; border-bottom: 1px solid transparent;
+  color: #1abc9c; text-decoration: none; border-bottom: 1px solid transparent;
   transition: border-color 0.2s;
 }
-.blog-window a:hover { border-color: var(--accent-light); }
+.blog-window a:hover { border-color: #1abc9c; }
 .blog-title {
   font-weight: 600;
   font-size: 0.75rem;
