@@ -49,6 +49,38 @@ body::before {
   z-index: -1;
 }
 
+/* === 首页专用 nav (demo-starfield.html 样式) === */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 3rem;
+}
+.nav-logo {
+  font-size: 1.2rem;
+  letter-spacing: 0.35em;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: #fff; }
+
+/* 通用 nav (其它页面用 Layout.astro) */
 nav {
   position: fixed;
   top: 0;
