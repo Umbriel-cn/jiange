@@ -1,0 +1,914 @@
+/* 承影门户 - 慈悲睿智 · 简洁锋利 */
+/* 光与影一体两面 · 暗色水墨风 */
+
+:root {
+  --bg-primary: #0d0d0f;
+  --bg-secondary: #141418;
+  --bg-card: #1a1a1f;
+  --text-primary: #e8e4df;
+  --text-secondary: #9a9590;
+  --accent-light: #c9c2b8;
+  --accent-dark: #4a4540;
+  --ink-black: #1a1816;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --border-subtle: rgba(201, 194, 184, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.8;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(201, 194, 184, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(74, 69, 64, 0.05) 0%, transparent 50%);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* === 首页专用 nav (demo-starfield.html 样式) === */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 3rem;
+}
+.nav-logo {
+  font-size: 1.2rem;
+  letter-spacing: 0.35em;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: #fff; }
+
+/* 通用 nav (其它页面用 Layout.astro) */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--bg-primary) 0%, transparent 100%);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--text-primary);
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.logo-sword {
+  height: 1.98em;
+  width: auto;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+  animation: nav-glow 4s ease-in-out infinite;
+}
+
+.logo:hover .logo-sword {
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes nav-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.9; }
+}
+
+.logo::after {
+  content: "影";
+  position: absolute;
+  right: -1.5em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.5em;
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-light);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 8rem 0;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 6rem;
+  position: relative;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.4em;
+  margin-bottom: 3rem;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--accent-dark);
+  letter-spacing: 0.2em;
+  max-width: 600px;
+  line-height: 2;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-dark), transparent);
+  margin: 3rem 0;
+}
+
+.light-shadow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero-sword {
+  margin-top: 1rem;
+  opacity: 0.6;
+  animation: sword-glow 4s ease-in-out infinite;
+}
+
+.hero-sword-img {
+  width: 115px;
+  height: auto;
+}
+
+@keyframes sword-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.light-shadow.light {
+  background: var(--accent-light);
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.light-shadow.shadow {
+  background: var(--ink-black);
+  bottom: 20%;
+  right: 20%;
+  animation-delay: -4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+.philosophy {
+  padding: 8rem 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.2em;
+  margin-bottom: 4rem;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.philosophy-item {
+  padding: 2rem;
+  text-align: center;
+}
+
+.philosophy-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.philosophy-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.philosophy-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+.seven-stars {
+  padding: 10rem 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.stars-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.star-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.star-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-dark), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.star-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-dark);
+  box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.star-card:hover::before {
+  opacity: 1;
+}
+
+.star-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.2em;
+}
+
+.star-en {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+.star-role {
+  font-size: 0.85rem;
+  color: var(--accent-light);
+  letter-spacing: 0.1em;
+}
+
+.star-level {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  z-index: 100;
+}
+
+footer .year {
+  color: var(--accent-dark);
+}
+
+/* 通用卡片样式 */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--accent-dark);
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* 按钮/链接样式 */
+.btn-link {
+  color: var(--accent-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-link:hover {
+  letter-spacing: 0.2em;
+  color: var(--text-primary);
+}
+
+/* 标签样式 */
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.tag-amber { background: rgba(201, 194, 184, 0.2); color: var(--accent-light); }
+.tag-green { background: rgba(76, 175, 80, 0.2); color: #4caf50; }
+.tag-blue { background: rgba(33, 150, 243, 0.2); color: #2196f3; }
+.tag-purple { background: rgba(156, 39, 176, 0.2); color: #9c27b0; }
+
+/* 文章样式 */
+.article-content {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--text-primary);
+}
+
+.article-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  margin: 2.5rem 0 1.5rem;
+  color: var(--accent-light);
+  border-left: 4px solid var(--accent-light);
+  padding-left: 1rem;
+}
+
+.article-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin: 2rem 0 1rem;
+  color: var(--text-primary);
+}
+
+.article-content p {
+  margin-bottom: 1.5rem;
+}
+
+.article-content blockquote {
+  border-left: 4px solid var(--accent-light);
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 2rem 0;
+}
+
+.article-content ul, .article-content ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+}
+
+.article-content a {
+  color: var(--accent-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.article-content a:hover {
+  color: var(--text-primary);
+}
+
+.article-content hr {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: 3rem 0;
+}
+
+.article-content code {
+  background: var(--bg-secondary);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.article-content pre {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+/* 标签筛选按钮 */
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tag-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tag-btn:hover {
+  border-color: var(--accent-dark);
+  color: var(--text-primary);
+}
+
+.tag-btn.active {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: var(--text-primary);
+}
+
+/* 返回链接 */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--text-primary);
+}
+
+/* 文章头部 */
+.article-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.article-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.article-meta {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+  .stars-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 1.5rem;
+  }
+  .nav-links {
+    gap: 1.5rem;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.3em;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+  }
+  .stars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .hero-tagline {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ===== Starfield Hero (首屏星空) ===== */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 0;
+  background: linear-gradient(to bottom,
+    #06080f 0%,
+    #0a1025 15%,
+    #0e1a3a 35%,
+    #142848 55%,
+    #1d3a5c 75%,
+    #284868 100%
+  );
+}
+
+canvas#starfield {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 四象限分隔线 */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+  z-index: 1;
+}
+.hero::before {
+  top: 50%; left: 0; right: 0; height: 1px;
+  transform: translateY(-50%);
+}
+.hero::after {
+  left: 50%; top: 0; bottom: 0; width: 1px;
+  transform: translateX(-50%);
+}
+
+/* 七星容器：左上象限，靠近中心交叉点 */
+.constellation {
+  position: absolute;
+  top: 20%; left: 16%;
+  width: 52%; height: 54%;
+  z-index: 10;
+}
+.constellation svg.lines-svg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
+}
+.constellation svg.lines-svg line {
+  stroke: rgba(255,255,255,0.08);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+/* 五角星形状 */
+.star {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 15;
+  text-decoration: none;
+}
+.star-dot {
+  width: 14px; height: 14px;
+  background: rgba(210,220,240,0.35);
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%,
+    68% 57%, 79% 91%, 50% 70%,
+    21% 91%, 32% 57%, 2% 35%, 39% 35%
+  );
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+  transform-origin: center;
+}
+.star[data-size="lg"] .star-dot { width: 18px; height: 18px; }
+.star[data-size="md"] .star-dot { width: 14px; height: 14px; }
+.star[data-size="sm"] .star-dot { width: 11px; height: 11px; }
+
+.star:hover .star-dot { transform: scale(1.3); filter: brightness(1.4); }
+
+.star.lighted .star-dot {
+  /* color set inline by JS */
+}
+
+/* tooltip */
+.star-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: rgba(8,12,24,0.9);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.star:hover .star-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.tooltip-name  { font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; }
+.tooltip-en    { font-size: 0.62rem; color: rgba(232,228,223,0.5); margin-left: 0.3em; }
+.tooltip-role  { font-size: 0.68rem; color: rgba(232,228,223,0.6); margin-top: 2px; }
+
+/* 北极星 */
+.polaris {
+  position: absolute;
+  z-index: 20;
+  cursor: default;
+}
+.polaris-dot {
+  width: 16px; height: 16px;
+  background: rgba(220,235,255,1);
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%,
+    68% 57%, 79% 91%, 50% 70%,
+    21% 91%, 32% 57%, 2% 35%, 39% 35%
+  );
+  box-shadow:
+    0 0 8px 3px rgba(200,225,255,0.6),
+    0 0 20px 5px rgba(200,225,255,0.25);
+  animation: polaris-breathe 3s ease-in-out infinite;
+}
+@keyframes polaris-breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 8px 3px rgba(200,225,255,0.6),
+      0 0 20px 5px rgba(200,225,255,0.25),
+      0 0 30px 8px rgba(200,225,255,0.15);
+  }
+  50% {
+    transform: scale(1.35);
+    box-shadow:
+      0 0 18px 6px rgba(220,240,255,1),
+      0 0 45px 12px rgba(220,240,255,0.5),
+      0 0 80px 22px rgba(220,240,255,0.3);
+  }
+}
+
+/* 剑图标：Hero 正下方，呼吸发光 */
+.sword-link {
+  position: absolute;
+  text-decoration: none;
+}
+.sword-icon {
+  position: absolute;
+  top: calc(80% - 62px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  width: 96px;
+  height: 96px;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.85;
+  animation: sword-breathe 3s ease-in-out infinite;
+}
+@keyframes sword-breathe {
+  0%, 100% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 8px rgba(26,200,145,0.4))
+            drop-shadow(0 0 16px rgba(26,200,145,0.2));
+  }
+  50% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) scale(1.12);
+    filter: drop-shadow(0 0 16px rgba(26,200,145,0.8))
+            drop-shadow(0 0 32px rgba(26,200,145,0.4))
+            drop-shadow(0 0 48px rgba(26,200,145,0.2));
+  }
+}
+
+/* 博客窗口：左下/右下象限正中 */
+.blog-window {
+  position: absolute;
+  width: 280px;
+  max-height: 220px;
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: rgba(232,228,223,0.85);
+  overflow-y: auto;
+  z-index: 30;
+  backdrop-filter: blur(2px);
+}
+.blog-window::-webkit-scrollbar { width: 4px; }
+.blog-window::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+.blog-window a {
+  color: #1abc9c; text-decoration: none; border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.blog-window a:hover { border-color: #1abc9c; }
+.blog-title {
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.blog-item { margin: 0.35rem 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.blog-item time { font-size: 0.6rem; color: var(--text-secondary); margin-right: 0.5rem; }
+
+/* 左下象限正中：光与影 (25%, 75%) */
+.blog-window.gys {
+  left: 25%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+}
+
+/* 右下象限正中：开明作品 (75%, 75%) */
+.blog-window.kmy {
+  left: 75%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+}
+
+/* 响应式：小屏隐藏星座/窗口，保留星场 */
+@media (max-width: 1024px) {
+  .constellation { display: none; }
+  .polaris { display: none; }
+  .blog-window { display: none; }
+  .sword-icon { width: 72px; height: 72px; top: calc(82% - 46px); }
+}
+@media (max-width: 768px) {
+  .sword-icon { width: 60px; height: 60px; top: calc(85% - 38px); }
+}
