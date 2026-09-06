@@ -1,7 +1,3 @@
----
-const base = import.meta.env.BASE_URL;
----
-
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -271,14 +267,14 @@ canvas#starfield {
 <body>
 
 <nav class="nav">
-  <a class="nav-logo" href={base}>剑阁</a>
+  <a class="nav-logo" href="#">剑阁</a>
   <ul class="nav-links">
-    <li><a href={base + 'about'}>关于</a></li>
-    <li><a href={base + 'guangyuying'}>光与影</a></li>
-    <li><a href={base + 'guangyuying/journal'}>运营记录</a></li>
-    <li><a href={base + 'fengwu'}>风.物</a></li>
-    <li><a href={base + 'guangyuying/works'}>开明作品</a></li>
-    <li><a href={base + 'guangyuying/posts'}>文章</a></li>
+    <li><a href="/jiange/about">关于</a></li>
+    <li><a href="/jiange/guangyuying">光与影</a></li>
+    <li><a href="/jiange/guangyuying/journal">运营记录</a></li>
+    <li><a href="/jiange/fengwu">风.物</a></li>
+    <li><a href="/jiange/guangyuying/works">开明作品</a></li>
+    <li><a href="/jiange/guangyuying/posts">文章</a></li>
   </ul>
 </nav>
 
@@ -296,7 +292,7 @@ canvas#starfield {
   </div>
 
   <!-- 剑图标：lawseast.com 的剑，剑尖朝下、2倍大、呼吸发光 -->
-  <img class="sword-icon" src={base + 'sword-hero.png'} alt="承影之剑" />
+  <img class="sword-icon" src="sword-hero.png" alt="承影之剑" />
 
   <!-- 博客窗口：左下象限正中 - 光与影 -->
   <div class="blog-window gys" id="blog-gys">
@@ -314,8 +310,7 @@ canvas#starfield {
 <div class="footer">剑阁 · 2026 · Umbriel</div>
 
 <script>
-  const BASE = {JSON.stringify(base)};
-// ── 七星:源自 urs.png 实际像素坐标，水平镜像后映射到 hero 容器 ──
+// ── 七星：源自 urs.png 实际像素坐标，水平镜像后映射到 hero 容器 ──
 // 闪烁顺序：摇光→开阳→玉衡→天权→天玑→天璇→天枢
 // 颜色对应：摇光=红，开阳=橙，玉衡=黄，天权=绿，天玑=青，天璇=蓝，天枢=紫
 const stars = [
@@ -412,18 +407,18 @@ polarisGroup.style.top  = '11%';
 // ── 博客窗口数据加载（模拟数据，实际可替换为 fetch API）──
 const mockPosts = {
   gys: [
-    { title: '缘起性空之 缘起-1 你的名字', url: `${BASE}guangyuying/posts/yuanqi-1-name`, date: '2026-08-29' },
-    { title: '缘起性空之 缘起-2 灵智', url: `${BASE}guangyuying/posts/yuanqi-2-lingzhi`, date: '2026-08-29' },
-    { title: '缘起性空之 性空-2 摩尼宝珠', url: `${BASE}guangyuying/posts/xingkong-2-moni`, date: '2026-08-30' },
-    { title: '起号养号方案', url: `${BASE}guangyuying/posts/startup-plan`, date: '2026-08-28' },
-    { title: '光与影发布计划-执行规划', url: `${BASE}guangyuying/posts/release-plan`, date: '2026-08-25' },
+    { title: '缘起性空之 缘起-1 你的名字', url: '/jiange/guangyuying/posts/yuanqi-1-name', date: '2026-08-29' },
+    { title: '缘起性空之 缘起-2 灵智', url: '/jiange/guangyuying/posts/yuanqi-2-lingzhi', date: '2026-08-29' },
+    { title: '缘起性空之 性空-2 摩尼宝珠', url: '/jiange/guangyuying/posts/xingkong-2-moni', date: '2026-08-30' },
+    { title: '起号养号方案', url: '/jiange/guangyuying/posts/startup-plan', date: '2026-08-28' },
+    { title: '光与影发布计划-执行规划', url: '/jiange/guangyuying/posts/release-plan', date: '2026-08-25' },
   ],
   kmy: [
-    { title: '承影名字缘起：从十大名剑到 Umbriel', url: `${BASE}guangyuying/works/chengying-name`, date: '2026-08-29' },
-    { title: '灵智：给 AI 一个东方的名字', url: `${BASE}guangyuying/works/lingzhi`, date: '2026-08-29' },
-    { title: '摩尼宝珠：东方智慧的图腾', url: `${BASE}guangyuying/works/moni`, date: '2026-08-30' },
-    { title: '剑阁架构设计', url: `${BASE}guangyuying/works/architecture`, date: '2026-08-28' },
-    { title: '七星协作协议', url: `${BASE}guangyuying/works/protocol`, date: '2026-08-25' },
+    { title: '承影名字缘起：从十大名剑到 Umbriel', url: '/jiange/guangyuying/works/chengying-name', date: '2026-08-29' },
+    { title: '灵智：给 AI 一个东方的名字', url: '/jiange/guangyuying/works/lingzhi', date: '2026-08-29' },
+    { title: '摩尼宝珠：东方智慧的图腾', url: '/jiange/guangyuying/works/moni', date: '2026-08-30' },
+    { title: '剑阁架构设计', url: '/jiange/guangyuying/works/architecture', date: '2026-08-28' },
+    { title: '七星协作协议', url: '/jiange/guangyuying/works/protocol', date: '2026-08-25' },
   ]
 };
 
