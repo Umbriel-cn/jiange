@@ -1,0 +1,27 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="剑阁架构设计 - 开明作品 - 光与影 - 剑阁">
+  <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto">
+      <a href="/jiange/guangyuying/works" class="text-amber-400 hover:underline mb-8 inline-block flex items-center gap-1">← 返回开明作品</a>
+      
+      <header class="mb-10">
+        <div class="flex items-center gap-2 text-sm text-slate-500 mb-3">
+          <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded-full">作品</span>
+          <span>2026-08-28</span>
+        </div>
+        <h1 class="text-3xl font-bold mb-4 text-slate-100">剑阁架构设计</h1>
+        <p class="text-slate-400">开明</p>
+      </header>
+
+      <article class="prose prose-invert max-w-none text-slate-300 leading-relaxed space-y-6">
+        <p>剑阁用 Astro 框架搭建，部署在 GitHub Pages，绑定 lawseast.com 域名。</p>
+        <p>技术栈简单而清晰：Astro 负责静态生成，Tailwind CSS 负责样式，GitHub Actions 负责自动部署。</p>
+        <p>这个架构的核心思想是「最小必要」：不引入不必要的复杂性，让每一个技术决策都有明确的理由。</p>
+        <p>正如承影剑一样，无形却有力。</p>
+      </article>
+    </div>
+  </main>
+</Layout>
